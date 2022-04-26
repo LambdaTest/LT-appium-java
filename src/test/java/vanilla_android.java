@@ -8,9 +8,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class vanilla_android {
-    public static String userName = System.getenv("LT_USERNAME") == null ? "shashankj"  //Add username here
+    public static String userName = System.getenv("LT_USERNAME") == null ? "LT_USERNAME"  //Add username here
             : System.getenv("LT_USERNAME");
-    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "mPh06ySlwYZZPiVDuAgWBZAXLrq0s5vCLgf8JjaACxHI3bFiUM" //Add accessKey here
+    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "LT_ACCESS_KEY" //Add accessKey here
             : System.getenv("LT_ACCESS_KEY");
 
     private static AppiumDriver driver;
