@@ -1,20 +1,20 @@
-# Java With Appium
-## Tutorial To Run Your First Test On LambdaTest
+# Java ![pw](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 
-In this topic, you will learn how to configure and run your **Java** automation testing scripts with **Appium** on **LambdaTest Real Device Cloud platform**.
+<img height="300" src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white">
+
+*Java is a popular computer programming language. It is used to develop programs for many different uses, including desktop and mobile applications, big data processing, embedded systems, and so on. According to Oracle, the company that owns Java, Java runs on 3 billion devices worldwide.*
+
+Learn the basics of [Appium testing on the LambdaTest platform](https://www.lambdatest.com/support/docs/getting-started-with-appium-testing/).
 
 ## Table of Contents
 
 * [Objective](#objective)
 * [Pre-requisites](#pre-requisites)
-   - [Clone the Sample Project](#clone-the-sample-project)
-   - [Setting up Your Authentication](#setting-up-your-authentication)
-   - [Upload Your Application](#upload-your-application)
 * [Run Your First Test](#run-your-first-test)
-   - [Sample Test With Java](#sample-test-with-java)
-   - [Configuring Your Test Capabilities](#configuring-your-test-capabilities)
-   - [Executing The Test](#executing-the-test)
-* [Additional Links](#additional-links)
+   
+## Tutorial To Run Your First Test On LambdaTest
+
+In this topic, you will learn how to configure and run your **Java** automation testing scripts with **Appium** on **LambdaTest Real Device Cloud platform**.
 
 ## Objective
 
@@ -23,8 +23,6 @@ By the end of this topic, you will be able to:
 1. Run a sample automation script of **Java** for application testing with **Appium** on **LambdaTest**.
 2. Learn more about Desired Capabilities for Appium testing.
 3. Explore advanced features of LambdaTest.
-
-To learn more about how LambdaTest can help you in running Appium Tests with Java, do check out our [Java With Appium Guide](https://www.lambdatest.com/support/docs/appium-java/). 
 
 ## Pre-requisites
 
@@ -102,213 +100,9 @@ Tip:
 
 ## Run Your First Test
 
-### Sample Test With Java
+Once you are done with the above-mentioned steps, you can initiate your first Java test on LambdaTest.
 
-Here are sample JUnit automation scripts used to run on an Android app and iOS app. Ensure to update the `app_url` in the code scripts before running the tests.
-
-<Tabs className="docs__val">
-<TabItem value="android" label="Android" default>
-
-```java title="vanilla_android.java"
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-public class vanilla_android {
-    public static String userName = System.getenv("LT_USERNAME") == null ? "LT_USERNAME"  //Add username here
-            : System.getenv("LT_USERNAME");
-    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "LT_ACCESS_KEY" //Add accessKey here
-            : System.getenv("LT_ACCESS_KEY");
-
-    private static AppiumDriver driver;
-
-    public static void main(String args[]) throws MalformedURLException, InterruptedException {
-
-        try {
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("deviceName", "Galaxy S20");
-            capabilities.setCapability("platformVersion", "11");
-            capabilities.setCapability("platformName", "Android");
-            capabilities.setCapability("isRealMobile", true);
-            capabilities.setCapability("app", "lt://APP100202491650550026383902"); //Enter your app url
-            capabilities.setCapability("deviceOrientation", "PORTRAIT");
-            capabilities.setCapability("build", "Java Vanilla - iOS");
-            capabilities.setCapability("name", "Sample Test Java");
-            capabilities.setCapability("console", true);
-            capabilities.setCapability("network", false);
-            capabilities.setCapability("visual", true);
-            capabilities.setCapability("devicelog", true);
-
-            driver = new AppiumDriver(new URL("https://" +userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"), capabilities);
-
-            MobileElement color = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/color"));
-            color.click();
-
-            MobileElement text = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/Text"));
-            //Changes the text to proverbial
-            text.click();
-
-            //toast is visible
-            MobileElement toast = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/toast"));
-            toast.click();
-
-            //notification is visible
-            MobileElement notification = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/notification"));
-            notification.click();
-
-            //Open the geolocation page
-            MobileElement geo = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/geoLocation"));
-            geo.click();
-            Thread.sleep(5000);
-
-            //takes back to home page
-            MobileElement el3 = (MobileElement) driver.findElementByAccessibilityId("Home");
-
-            driver.navigate().back();
-            Thread.sleep(2000);
-
-            //Takes to speed test page
-            MobileElement speedtest = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/speedTest"));
-            speedtest.click();
-            Thread.sleep(5000);
-
-            driver.navigate().back();
-
-            //Opens the browser
-            MobileElement browser = (MobileElement) driver.findElement(MobileBy.AccessibilityId("Browser"));
-            browser.click();
-
-            MobileElement url = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/url"));
-            url.sendKeys("https://www.lambdatest.com");
-            MobileElement find = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/find"));
-            find.click();
-
-        } catch (AssertionError a) {
-            ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
-            a.printStackTrace();
-        }
-// The driver.quit statement is required, otherwise the test continues to execute, leading to a timeout.
-        driver.quit();
-    }
-    }
-```
-
-</TabItem>
-
-<TabItem value="ios" label="iOS" default>
-
-```java title="vanilla_ios.java"
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.ios.IOSDriver;
-
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.net.URL;
-
-public class vanilla_ios {
-
-    public static String userName = System.getenv("LT_USERNAME") == null ? "LT_USERNAME"  //Add username here
-            : System.getenv("LT_USERNAME");
-    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "LT_ACCESS_KEY" //Add accessKey here
-            : System.getenv("LT_ACCESS_KEY");
-
-    public static final String URL = "https://" + userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub";
-    public static IOSDriver driver = null;
-
-    public static void main(String[] args) throws Exception {
-
-       try {
-            DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("platformVersion", "15");
-            caps.setCapability("deviceName", "iPhone 12");
-            caps.setCapability("isRealMobile", true);
-            caps.setCapability("app", "lt://APP100202491650549951124834"); //Enter your app url
-            caps.setCapability("platformName", "iOS");
-            caps.setCapability("build", "Java Vanilla - iOS");
-            caps.setCapability("name", "Sample Test Java");
-            caps.setCapability("devicelog", true);
-            caps.setCapability("network", true);
-
-
-        driver = new IOSDriver(new URL("https://" + userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"), caps);
-
-
-            Thread.sleep(2000);
-
-            //Changes color
-
-            driver.findElement(MobileBy.id("color")).click();
-            Thread.sleep(1000);
-
-            //Back to black color
-            driver.navigate().back();
-
-            Thread.sleep(1000);
-
-            //Changes the text to proverbial
-            driver.findElement(MobileBy.id("Text")).click();
-            Thread.sleep(1000);
-
-            //toast is visible
-            driver.findElement(MobileBy.id("toast")).click();
-            Thread.sleep(1000);
-
-            //notification is visible
-            driver.findElement(MobileBy.id("notification")).click();
-            Thread.sleep(2000);
-
-            //Open the geolocation page
-            driver.findElement(MobileBy.id("geoLocation")).click();
-            Thread.sleep(4000);
-            driver.navigate().back();
-            Thread.sleep(1000);
-
-            //Takes to speed test page
-            driver.findElement(MobileBy.id("speedTest")).click();
-            Thread.sleep(5000);
-            driver.navigate().back();
-            Thread.sleep(1000);
-
-            //Opens the browser
-            MobileElement browser = (MobileElement) driver.findElementByAccessibilityId("Browser");
-            browser.click();
-            Thread.sleep(3000);
-
-           WebDriverWait el7 =  new WebDriverWait(driver, 30);
-           el7.until(ExpectedConditions.elementToBeClickable(MobileBy.id("url")));
-           driver.findElementById("url").sendKeys("https://www.lambdatest.com/");
-
-            //Clicks on the text box
-            WebDriverWait el = new WebDriverWait(driver,90);
-            MobileElement el4 = (MobileElement) driver.findElementByAccessibilityId("find");
-            el.until(ExpectedConditions.elementToBeClickable(el4));
-            el4.click();
-            el4.sendKeys("Lambdatest");
-
-            //((JavascriptExecutor) driver).executeScript("lambda-status=passed");
-            driver.quit();
-
-        } catch (Exception t) {
-           System.out.println(t);
-           driver.quit();
-
-       }
-    }
-}
-```
-
-</TabItem>
-
-</Tabs>
+Test Scenario: Check out [vanila_android.java](https://github.com/LambdaTest/LT-appium-java/blob/master/src/test/java/vanilla_android.java) file to view the sample test script for android and [vanilla_ios.java](https://github.com/LambdaTest/LT-appium-java/blob/master/src/test/java/vanilla_ios.java) for iOS.
 
 ### Configuring Your Test Capabilities
 
@@ -389,11 +183,21 @@ Info: Your test results would be displayed on the test console (or command-line 
 - [How to test locally hosted apps](https://www.lambdatest.com/support/docs/testing-locally-hosted-pages/)
 - [How to integrate LambdaTest with CI/CD](https://www.lambdatest.com/support/docs/integrations-with-ci-cd-tools/)
 
-## About LambdaTest
+## LambdaTest Community :busts_in_silhouette:
 
-LambdaTest is a cloud-based cross-browser testing platform that allows you to perform cross-browser testing for your web applications. LambdaTest's cross browser testing capabilities include manual and automated tools that test your web applications across more than 3000 browsers, operating systems, and devices.
+The [LambdaTest Community](https://community.lambdatest.com/) allows people to interact with tech enthusiasts. Connect, ask questions, and learn from tech-savvy people. Discuss best practises in web development, testing, and DevOps with professionals from across the globe.
 
-## We are here to help you :)
-* LambdaTest Support: [support@lambdatest.com](mailto:support@lambdatest.com)
-* Getting Started with Appium Testing: https://www.lambdatest.com/support/docs/getting-started-with-appium-testing/
-* Lambdatest HomePage: https://www.lambdatest.com
+## Documentation & Resources :books:
+      
+If you want to learn more about the LambdaTest's features, setup, and usage, visit the [LambdaTest documentation](https://www.lambdatest.com/support/docs/). You can also find in-depth tutorials around test automation, mobile app testing, responsive testing, manual testing on [LambdaTest Blog](https://www.lambdatest.com/blog/) and [LambdaTest Learning Hub](https://www.lambdatest.com/learning-hub/).     
+      
+ ## About LambdaTest
+
+[LambdaTest](https://www.lambdatest.com) is a leading test execution and orchestration platform that is fast, reliable, scalable, and secure. It allows users to run both manual and automated testing of web and mobile apps across 3000+ different browsers, operating systems, and real device combinations. Using LambdaTest, businesses can ensure quicker developer feedback and hence achieve faster go to market. Over 500 enterprises and 1 Million + users across 130+ countries rely on LambdaTest for their testing needs.
+
+[<img height="70" src="https://user-images.githubusercontent.com/70570645/169649126-ed61f6de-49b5-4593-80cf-3391ca40d665.PNG">](https://accounts.lambdatest.com/register)
+      
+## We are here to help you :headphones:
+
+* Got a query? we are available 24x7 to help. [Contact Us](mailto:support@lambdatest.com)
+* For more info, visit - https://www.lambdatest.com
