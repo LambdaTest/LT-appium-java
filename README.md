@@ -48,13 +48,13 @@ Make sure you have your LambdaTest credentials with you to run test automation s
 
 **For Linux/macOS:**
 
-`{`export LT_USERNAME="${ YOUR_LAMBDATEST_USERNAME()`}"` \\
-`export LT_ACCESS_KEY="${ YOUR_LAMBDATEST_ACCESS_KEY()}`}"`
+  {`export LT_USERNAME="${ YOUR_LAMBDATEST_USERNAME()}" \\
+export LT_ACCESS_KEY="${ YOUR_LAMBDATEST_ACCESS_KEY()}`}"
  
 **For Windows:**
 
-  `{`set LT_USERNAME="${ YOUR_LAMBDATEST_USERNAME()}" \`
-`set LT_ACCESS_KEY="${ YOUR_LAMBDATEST_ACCESS_KEY()}`}"`
+  {`set LT_USERNAME="${ YOUR_LAMBDATEST_USERNAME()}" \`
+set LT_ACCESS_KEY="${ YOUR_LAMBDATEST_ACCESS_KEY()}`}"
  
 ### Upload Your Application
 
@@ -64,34 +64,28 @@ Make sure you have your LambdaTest credentials with you to run test automation s
 
 **Linux/macOS:**
 
-`{`curl -u "${ YOUR_LAMBDATEST_USERNAME()}:${ YOUR_LAMBDATEST_ACCESS_KEY()`}" \\`
-
-`--location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \\`
-
-`--form 'name="Android_App"' \\`
-
-`--form 'appFile=@"/Users/macuser/Downloads/proverbial_android.apk"' 
-`}`
+{`curl -u "${ YOUR_LAMBDATEST_USERNAME()}:${ YOUR_LAMBDATEST_ACCESS_KEY()}" \\
+--location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \\
+--form 'name="Android_App"' \\
+--form 'appFile=@"/Users/macuser/Downloads/proverbial_android.apk"' 
+`}
 
 **Windows:**
 
-`{`curl -u "${ YOUR_LAMBDATEST_USERNAME()}:${ YOUR_LAMBDATEST_ACCESS_KEY()}" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"/Users/macuser/Downloads/proverbial_android.apk""`}`
+{`curl -u "${ YOUR_LAMBDATEST_USERNAME()}:${ YOUR_LAMBDATEST_ACCESS_KEY()}" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"/Users/macuser/Downloads/proverbial_android.apk""`}
 
 **Using App URL:**
 
 **Linux/macOS:**
 
-`{`curl -u "${ YOUR_LAMBDATEST_USERNAME()}:${ YOUR_LAMBDATEST_ACCESS_KEY()`}" \\`
-
-`--location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \\`
-
-`--form 'name="Android_App"' \\`
-
-`--form 'url="https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk"'`}`
+{`curl -u "${ YOUR_LAMBDATEST_USERNAME()}:${ YOUR_LAMBDATEST_ACCESS_KEY()}" \\
+--location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \\
+--form 'name="Android_App"' \\
+--form 'url="https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk"'`}
 
 **Windows:**
 
-`{`curl -u "${ YOUR_LAMBDATEST_USERNAME()}:${ YOUR_LAMBDATEST_ACCESS_KEY()}" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -d "{\"url\":\"https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk\",\"name\":\"sample.apk\"}"`}`
+{`curl -u "${ YOUR_LAMBDATEST_USERNAME()}:${ YOUR_LAMBDATEST_ACCESS_KEY()}" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -d "{\"url\":\"https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk\",\"name\":\"sample.apk\"}"`}
 
 Tip: 
 
