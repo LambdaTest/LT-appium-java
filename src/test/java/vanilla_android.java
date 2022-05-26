@@ -32,7 +32,7 @@ public class vanilla_android {
             capabilities.setCapability("visual", true);
             capabilities.setCapability("devicelog", true);
 
-            driver = new AppiumDriver(new URL("https://" +userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"), capabilities);
+            driver = new AppiumDriver(new URL("https://" +userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"), capabilities);
 
             MobileElement color = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/color"));
             color.click();
