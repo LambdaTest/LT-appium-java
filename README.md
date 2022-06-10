@@ -1,10 +1,10 @@
-# How to change IP geographic location in Java with Appium on [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-java-geoLocation)
+# How to handle permission pop-ups in Java with Appium on [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-java-permissions)
 
-While performing app automation testing with appium on LambdaTest Grid, you may face a scenario where you would like to simulate location of a specific country. You can easily do that by using the lambdatest capability "GeoLocation" and refer the 2-letter country code in the automation script. You can refer to sample test repo [here](https://github.com/LambdaTest/LT-appium-java).
+While performing app automation testing with appium on LambdaTest Grid, you may face a scenario where you would like to automatically handle permission pop-ups. You may choose to either accept all permission pop-ups or dismiss all of them. You can handle the case as mentioned below separately for Android or iOS apps. You can refer to sample test repo [here](https://github.com/LambdaTest/LT-appium-java).
 
 # Steps:
 
-The following is an example on how to set geoLocation in the capabilities. You can make the change in the ```vanilla_android.java``` and ```vanilla_ios.java``` file:
+The following is an example on how to set permissions in the capabilities. You can make the change in the ```vanilla_android.java``` and ```vanilla_ios.java``` file:
 
 Below is the ```vanilla_android.java``` example shown:
 
@@ -34,8 +34,14 @@ public class vanilla_android {
             capabilities.setCapability("visual", true);
             capabilities.setCapability("devicelog", true);
           
-            //ADD GEOLOCATION BASED ON COUNTRY CODE
-            capabilities.setCapability("geoLocation", "fr");
+            //GRANT PERMISSIONS FOR ANDROID
+            capabilities.setCapability("autoGrantPermissions", true);
+                
+            //ACCEPT ALERTS FOR IOS
+            capabilities.setCapability("autoDismissAlerts", true);
+
+            //DISMISS ALERTS FOR IOS
+            capabilities.setCapability("autoAcceptAlerts", true);
 
             driver = new AppiumDriver(new URL("https://" +userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"), capabilities);
 
@@ -134,4 +140,4 @@ To stay updated with the latest features and product add-ons, visit [Changelog](
 ## We are here to help you :headphones:
 
 * Got a query? we are available 24x7 to help. [Contact Us](support@lambdatest.com)
-* For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-java-geoLocation)
+* For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-java-permissions)
