@@ -16,7 +16,7 @@ public class vanilla_ios {
     public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "LT_ACCESS_KEY" //Add accessKey here
             : System.getenv("LT_ACCESS_KEY");
 
-    public static final String URL = "https://" + userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub";
+    public static final String URL = "https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub";
     public static IOSDriver driver = null;
 
     public static void main(String[] args) throws Exception {
@@ -33,6 +33,12 @@ public class vanilla_ios {
             caps.setCapability("devicelog", true);
             caps.setCapability("network", true);
             capabilities.setCapability("geoLocation", "fr");
+           
+            //ACCEPT ALERTS FOR IOS
+            capabilities.setCapability("autoDismissAlerts", true);
+                
+            //DISMISS ALERTS FOR IOS
+            capabilities.setCapability("autoAcceptAlerts", true);
 
 
         driver = new IOSDriver(new URL("https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"), caps);
