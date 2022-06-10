@@ -32,9 +32,10 @@ public class vanilla_ios {
             caps.setCapability("name", "Sample Test Java");
             caps.setCapability("devicelog", true);
             caps.setCapability("network", true);
+            capabilities.setCapability("geoLocation", "fr");
 
 
-        driver = new IOSDriver(new URL("https://" + userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"), caps);
+        driver = new IOSDriver(new URL("https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"), caps);
 
 
             Thread.sleep(2000);
