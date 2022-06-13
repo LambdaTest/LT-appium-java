@@ -23,7 +23,12 @@ public class vanilla_android {
             capabilities.setCapability("platformVersion", "11");
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("isRealMobile", true);
-            capabilities.setCapability("app", "APP_ID"); //Enter your app url
+
+            
+            //Enter the Custom_ID here that was used to upload your application
+
+            capabilities.setCapability("app", "ENTER_CUSTOM_ID_HERE");
+
             capabilities.setCapability("deviceOrientation", "PORTRAIT");
             capabilities.setCapability("build", "Java Vanilla - iOS");
             capabilities.setCapability("name", "Sample Test Java");
