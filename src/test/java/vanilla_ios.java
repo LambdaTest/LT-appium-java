@@ -32,7 +32,6 @@ public class vanilla_ios {
             caps.setCapability("name", "Sample Test Java");
             caps.setCapability("devicelog", true);
             caps.setCapability("network", true);
-            capabilities.setCapability("geoLocation", "fr");
 
 
         driver = new IOSDriver(new URL("https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"), caps);
@@ -90,10 +89,16 @@ public class vanilla_ios {
             el4.click();
             el4.sendKeys("Lambdatest");
 
-            //((JavascriptExecutor) driver).executeScript("lambda-status=passed");
+            //MARKING STATUS AS PASSED
+            ((JavascriptExecutor) driver).executeScript("lambda-status=passed");
+            
             driver.quit();
 
         } catch (Exception t) {
+           
+           //MARKING STATUS AS FAILED
+           ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
+           
            System.out.println(t);
            driver.quit();
 
