@@ -5,7 +5,6 @@ You can easily change this to something readable like this - ```Proverbial Andro
 Let's quickly learn how to achieve this.
 ### Setting Up Your Authentication
 
-# Steps:
 Make sure you have your LambdaTest credentials with you to run test automation scripts on LambdaTest. To obtain your access credentials, [purchase a plan](https://billing.lambdatest.com/billing/plans) or access the [Automation Dashboard](https://appautomation.lambdatest.com/).
 
 Set LambdaTest `Username` and `Access Key` in environment variables.
