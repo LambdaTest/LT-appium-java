@@ -1,10 +1,10 @@
-# How to change IP geographic location in Java with Appium on [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-java-geoLocation)
+# How to mark test as Passed or Failed in Java with Appium on [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-java-passfail)
 
-While performing app automation testing with appium on LambdaTest Grid, you may face a scenario where you would like to simulate location of a specific country. You can easily do that by using the lambdatest capability "GeoLocation" and refer the 2-letter country code in the automation script. You can refer to sample test repo [here](https://github.com/LambdaTest/LT-appium-java).
+While performing app automation testing with appium on LambdaTest Grid, you may face a scenario where a test that you declared as fail in your local instance may turn out to be completed successfully at LambdaTest. Don't worry though! We understand how imperative it is to flag an app automation test as either "pass" or "fail" depending upon your testing requirement with respect to the validation of expected behaviour. You can refer to sample test repo [here](https://github.com/LambdaTest/LT-appium-java).
 
 # Steps:
 
-The following is an example on how to set geoLocation in the capabilities. You can make the change in the ```vanilla_android.java``` and ```vanilla_ios.java``` file:
+You can specify a test as passed or failed by Lambda hooks. The following is an example on how to set test result as passed or failed. If the code reaches exception, then it will be marked as failed, else as passed.
 
 Below is the ```vanilla_android.java``` example shown:
 
@@ -33,9 +33,6 @@ public class vanilla_android {
             capabilities.setCapability("network", false);
             capabilities.setCapability("visual", true);
             capabilities.setCapability("devicelog", true);
-          
-            //ADD GEOLOCATION BASED ON COUNTRY CODE
-            capabilities.setCapability("geoLocation", "fr");
 
             driver = new AppiumDriver(new URL("https://" +userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"), capabilities);
 
@@ -53,13 +50,18 @@ public class vanilla_android {
             //notification is visible
             MobileElement notification = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/notification"));
             notification.click();
+            
+            //MARKING STATUS AS PASSED
+            ((JavascriptExecutor) driver).executeScript("lambda-status=passed");
 
 
         } catch (AssertionError a) {
             ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
             a.printStackTrace();
         }
-// The driver.quit statement is required, otherwise the test continues to execute, leading to a timeout.
+        
+        //MARKING STATUS AS FAILED
+        ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
         driver.quit();
     }
     }
@@ -134,4 +136,4 @@ To stay updated with the latest features and product add-ons, visit [Changelog](
 ## We are here to help you :headphones:
 
 * Got a query? we are available 24x7 to help. [Contact Us](support@lambdatest.com)
-* For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-java-geoLocation)
+* For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-java-passfail)
