@@ -16,7 +16,7 @@ public class vanilla_ios {
     public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "LT_ACCESS_KEY" //Add accessKey here
             : System.getenv("LT_ACCESS_KEY");
 
-    public static final String URL = "https://" + userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub";
+    public static final String URL = "https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub";
     public static IOSDriver driver = null;
 
     public static void main(String[] args) throws Exception {
@@ -26,7 +26,7 @@ public class vanilla_ios {
             caps.setCapability("platformVersion", "15");
             caps.setCapability("deviceName", "iPhone 12");
             caps.setCapability("isRealMobile", true);
-            caps.setCapability("app", "APP_ID"); //Enter your app url
+            caps.setCapability("app", "APP_URL"); //Enter your app url
             caps.setCapability("platformName", "iOS");
             caps.setCapability("build", "Java Vanilla - iOS");
             caps.setCapability("name", "Sample Test Java");
