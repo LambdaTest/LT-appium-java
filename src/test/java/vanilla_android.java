@@ -31,6 +31,10 @@ public class vanilla_android {
             capabilities.setCapability("network", false);
             capabilities.setCapability("visual", true);
             capabilities.setCapability("devicelog", true);
+            capabilities.setCapability("geoLocation", "fr");
+            
+            //GRANT PERMISSIONS FOR ANDROID
+            capabilities.setCapability("autoGrantPermissions", true);
 
             driver = new AppiumDriver(new URL("https://" +userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"), capabilities);
 
