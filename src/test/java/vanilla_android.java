@@ -77,10 +77,15 @@ public class vanilla_android {
             find.click();
 
         } catch (AssertionError a) {
+            
+            //MARKING STATUS AS FAILED
             ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
             a.printStackTrace();
         }
-// The driver.quit statement is required, otherwise the test continues to execute, leading to a timeout.
+        
+        //MARKING STATUS AS PASSED
+        ((JavascriptExecutor) driver).executeScript("lambda-status=passed");
+        
         driver.quit();
     }
     }
