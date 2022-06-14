@@ -11,7 +11,7 @@ This can be essential sometimes to see how your application behaves in different
 
 ## Run Your First Test
 
-Once you are done with the above-mentioned steps, you can initiate your first Python test on LambdaTest.
+Once you are done with the above-mentioned steps, you can initiate your first Java test on LambdaTest.
 
 ### Configuring Your Test Capabilities
 
