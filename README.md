@@ -18,6 +18,7 @@ public class vanilla_android {
     public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "LT_ACCESS_KEY" //Add accessKey here
             : System.getenv("LT_ACCESS_KEY");
 
+
     private static AppiumDriver driver;
 
     public static void main(String args[]) throws MalformedURLException, InterruptedException {
@@ -82,11 +83,15 @@ The tests can be executed in the terminal using the following command:
 
 Android:
 
-```mvn compile exec:java -Dexec.mainClass=vanilla_android -Dexec.classpathScope="test"```
+```bash
+mvn test -P android
+```
 
 iOS:
 
-```mvn compile exec:java -Dexec.mainClass=vanilla_ios -Dexec.classpathScope="test"```
+```bash
+mvn test -P ios
+```
 
 Info: Your test results would be displayed on the test console (or command-line interface if you are using terminal/cmd) and on the 🔗 LambdaTest App Automation Dashboard.
 
@@ -115,29 +120,29 @@ The [LambdaTest Community](https://community.lambdatest.com/) allows people to i
 
 ## What's New At LambdaTest ❓
 
-To stay updated with the latest features and product add-ons, visit [Changelog](https://changelog.lambdatest.com/) 
-      
+To stay updated with the latest features and product add-ons, visit [Changelog](https://changelog.lambdatest.com/)
+
 ## About LambdaTest
 
-[LambdaTest](https://www.lambdatest.com) is a leading test execution and orchestration platform that is fast, reliable, scalable, and secure. It allows users to run both manual and automated testing of web and mobile apps across 3000+ different browsers, operating systems, and real device combinations. Using LambdaTest, businesses can ensure quicker developer feedback and hence achieve faster go to market. Over 500 enterprises and 1 Million + users across 130+ countries rely on LambdaTest for their testing needs.    
+[LambdaTest](https://www.lambdatest.com) is a leading test execution and orchestration platform that is fast, reliable, scalable, and secure. It allows users to run both manual and automated testing of web and mobile apps across 3000+ different browsers, operating systems, and real device combinations. Using LambdaTest, businesses can ensure quicker developer feedback and hence achieve faster go to market. Over 500 enterprises and 1 Million + users across 130+ countries rely on LambdaTest for their testing needs.
 
 ### Features
 
-* Run Selenium, Cypress, Puppeteer, Playwright, and Appium automation tests across 3000+ real desktop and mobile environments.
-* Real-time cross browser testing on 3000+ environments.
-* Test on Real device cloud
-* Blazing fast test automation with HyperExecute
-* Accelerate testing, shorten job times and get faster feedback on code changes with Test At Scale.
-* Smart Visual Regression Testing on cloud
-* 120+ third-party integrations with your favorite tool for CI/CD, Project Management, Codeless Automation, and more.
-* Automated Screenshot testing across multiple browsers in a single click.
-* Local testing of web and mobile apps.
-* Online Accessibility Testing across 3000+ desktop and mobile browsers, browser versions, and operating systems.
-* Geolocation testing of web and mobile apps across 53+ countries.
-* LT Browser - for responsive testing across 50+ pre-installed mobile, tablets, desktop, and laptop viewports
-    
+- Run Selenium, Cypress, Puppeteer, Playwright, and Appium automation tests across 3000+ real desktop and mobile environments.
+- Real-time cross browser testing on 3000+ environments.
+- Test on Real device cloud
+- Blazing fast test automation with HyperExecute
+- Accelerate testing, shorten job times and get faster feedback on code changes with Test At Scale.
+- Smart Visual Regression Testing on cloud
+- 120+ third-party integrations with your favorite tool for CI/CD, Project Management, Codeless Automation, and more.
+- Automated Screenshot testing across multiple browsers in a single click.
+- Local testing of web and mobile apps.
+- Online Accessibility Testing across 3000+ desktop and mobile browsers, browser versions, and operating systems.
+- Geolocation testing of web and mobile apps across 53+ countries.
+- LT Browser - for responsive testing across 50+ pre-installed mobile, tablets, desktop, and laptop viewports
+
 [<img height="53" width="200" src="https://user-images.githubusercontent.com/70570645/171866795-52c11b49-0728-4229-b073-4b704209ddde.png">](https://accounts.lambdatest.com/register)
-      
+   
 ## We are here to help you :headphones:
 
 * Got a query? we are available 24x7 to help. [Contact Us](support@lambdatest.com)
