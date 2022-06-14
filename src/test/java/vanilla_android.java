@@ -23,7 +23,11 @@ public class vanilla_android {
             capabilities.setCapability("platformVersion", "11");
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("isRealMobile", true);
-            capabilities.setCapability("app", "APP_URL"); //Enter your app url
+            
+            //Enter the Custom_ID here that was used to upload your application
+
+            capabilities.setCapability("app", "ENTER_CUSTOM_ID_HERE");
+
             capabilities.setCapability("deviceOrientation", "PORTRAIT");
             capabilities.setCapability("build", "Java Vanilla - iOS");
             capabilities.setCapability("name", "Sample Test Java");
@@ -49,32 +53,6 @@ public class vanilla_android {
             MobileElement notification = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/notification"));
             notification.click();
 
-            //Open the geolocation page
-            MobileElement geo = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/geoLocation"));
-            geo.click();
-            Thread.sleep(5000);
-
-            //takes back to home page
-            MobileElement el3 = (MobileElement) driver.findElementByAccessibilityId("Home");
-
-            driver.navigate().back();
-            Thread.sleep(2000);
-
-            //Takes to speed test page
-            MobileElement speedtest = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/speedTest"));
-            speedtest.click();
-            Thread.sleep(5000);
-
-            driver.navigate().back();
-
-            //Opens the browser
-            MobileElement browser = (MobileElement) driver.findElement(MobileBy.AccessibilityId("Browser"));
-            browser.click();
-
-            MobileElement url = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/url"));
-            url.sendKeys("https://www.lambdatest.com");
-            MobileElement find = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/find"));
-            find.click();
 
         } catch (AssertionError a) {
             ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
