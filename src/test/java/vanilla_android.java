@@ -45,6 +45,12 @@ public class vanilla_android {
             //Changes the text to proverbial
             text.click();
 
+            //Close the application
+            driver.closeApp();
+
+            //Open the application
+            driver.launchApp();
+
             //toast is visible
             MobileElement toast = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/toast"));
             toast.click();

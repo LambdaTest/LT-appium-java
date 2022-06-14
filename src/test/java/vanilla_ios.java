@@ -56,6 +56,13 @@ public class vanilla_ios {
             driver.findElement(MobileBy.id("Text")).click();
             Thread.sleep(1000);
 
+
+            //Close the application
+            driver.closeApp();
+
+            //Open the application
+            driver.launchApp();
+
             //toast is visible
             driver.findElement(MobileBy.id("toast")).click();
             Thread.sleep(1000);
