@@ -89,11 +89,13 @@ For more information on the Appium Commands used here, head over to:
 * [Launch App | Appium](https://appium.io/docs/en/commands/device/app/launch-app/)
 * [Close App | Appium](https://appium.io/docs/en/commands/device/app/close-app/)
 
-##Executing The Test
+## Executing The Test
 
 Execute the following commands to install the required dependencies:
 
-```mvn clean install```
+```bash
+mvn clean install
+```
 
 The tests can be executed in the terminal using the following command:
 
