@@ -12,14 +12,14 @@ Set LambdaTest `Username` and `Access Key` in environment variables.
 
 **For Linux/macOS:**
 
-```js
+```bash
 export LT_USERNAME="YOUR_LAMBDATEST_USERNAME" \
 export LT_ACCESS_KEY="YOUR_LAMBDATEST_ACCESS_KEY"
 ```
 
 **For Windows:**
 
-```js
+```bash
 set LT_USERNAME="YOUR_LAMBDATEST_USERNAME" `
 set LT_ACCESS_KEY="YOUR_LAMBDATEST_ACCESS_KEY"
 ```
@@ -32,7 +32,7 @@ Upload your **_iOS_** application (.ipa file) or **_android_** application (.apk
 
 **Linux/macOS:**
 
-```js
+```bash
 curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 --location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \
 --form 'name="Android_App"' \
@@ -42,7 +42,7 @@ curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 
 **Windows:**
 
-```js
+```bash
 curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"C:\Users\varunkumarb\Downloads\proverbial_android.apk"" -F "custom_id=ENTER_CUSTOM_ID_HERE"
 ```
 
@@ -50,7 +50,7 @@ curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://m
 
 **Linux/macOS:**
 
-```js
+```bash
 curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 --location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \
 --form 'name="Android_App"' \
@@ -60,7 +60,7 @@ curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 
 **For Windows:**
 
-```js
+```bash
 curl --location --request POST "https://manual-api.lambdatest.com/app/upload/realDevice" -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" --header "Content-Type: application/x-www-form-urlencoded" --data-urlencode "url=https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk" --data-urlencode "name=teest" --data-urlencode "custom_id=ENTER_CUSTOM_ID_HERE"
 ```
 
@@ -151,11 +151,13 @@ public class vanilla_android {
     }
 ```
 
-##Executing The Test
+## Executing The Test
 
 Execute the following commands to install the required dependencies:
 
-```mvn clean install```
+```bash
+mvn clean install
+```
   
 The tests can be executed in the terminal using the following command:
 
