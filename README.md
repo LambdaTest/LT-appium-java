@@ -4,11 +4,11 @@ While performing app automation testing with appium on LambdaTest Grid, you may 
 
 # Steps:
 
-The following is an example on how to set permissions in the capabilities. You can make the change in the ```vanilla_android.java``` and ```vanilla_ios.java``` file:
+The following is an example on how to set permissions in the capabilities. You can make the change in the `vanilla_android.java` and `vanilla_ios.java` file:
 
-Below is the ```vanilla_android.java``` example shown:
+Below is the `vanilla_android.java` example shown:
 
-```
+```java
 public class vanilla_android {
     public static String userName = System.getenv("LT_USERNAME") == null ? "LT_USERNAME"  //Add username here
             : System.getenv("LT_USERNAME");
