@@ -68,11 +68,14 @@ public class vanilla_android {
 
 ```
 
-##Executing The Test
+## Executing The Test
 
 Execute the following commands to install the required dependencies:
 
-```mvn clean install```
+```bash
+mvn clean install
+```
+
 The tests can be executed in the terminal using the following command:
 
 Android:
