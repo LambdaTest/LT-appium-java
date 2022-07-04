@@ -3,14 +3,13 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class vanilla_android {
-    public static String userName = System.getenv("LT_USERNAME") == null ? "LT_USERNAME"  //Add username here
+    public static String userName = System.getenv("LT_USERNAME") == null ? "YOUR_USERNAME" // Add username here
             : System.getenv("LT_USERNAME");
-    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "LT_ACCESS_KEY" //Add accessKey here
+    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "YOUR_ACCESS_KEY" // Add accessKey here
             : System.getenv("LT_ACCESS_KEY");
 
     private static AppiumDriver driver;
@@ -23,7 +22,7 @@ public class vanilla_android {
             capabilities.setCapability("platformVersion", "11");
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("isRealMobile", true);
-            capabilities.setCapability("app", "APP_URL"); //Enter your app url
+            capabilities.setCapability("app", "APP_URL"); // Enter your app url
             capabilities.setCapability("deviceOrientation", "PORTRAIT");
             capabilities.setCapability("build", "Java Vanilla - Android");
             capabilities.setCapability("name", "Sample Test Java");
@@ -32,42 +31,47 @@ public class vanilla_android {
             capabilities.setCapability("visual", true);
             capabilities.setCapability("devicelog", true);
 
-            driver = new AppiumDriver(new URL("https://" +userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"), capabilities);
+            driver = new AppiumDriver(
+                    new URL("https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"),
+                    capabilities);
 
             MobileElement color = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/color"));
             color.click();
 
             MobileElement text = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/Text"));
-            //Changes the text to proverbial
+            // Changes the text to proverbial
             text.click();
 
-            //toast is visible
+            // toast is visible
             MobileElement toast = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/toast"));
             toast.click();
 
-            //notification is visible
-            MobileElement notification = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/notification"));
+            // notification is visible
+            MobileElement notification = (MobileElement) driver
+                    .findElement(MobileBy.id("com.lambdatest.proverbial:id/notification"));
             notification.click();
 
-            //Open the geolocation page
-            MobileElement geo = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/geoLocation"));
+            // Open the geolocation page
+            MobileElement geo = (MobileElement) driver
+                    .findElement(MobileBy.id("com.lambdatest.proverbial:id/geoLocation"));
             geo.click();
             Thread.sleep(5000);
 
-            //takes back to home page
+            // takes back to home page
             MobileElement el3 = (MobileElement) driver.findElementByAccessibilityId("Home");
 
             driver.navigate().back();
             Thread.sleep(2000);
 
-            //Takes to speed test page
-            MobileElement speedtest = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/speedTest"));
+            // Takes to speed test page
+            MobileElement speedtest = (MobileElement) driver
+                    .findElement(MobileBy.id("com.lambdatest.proverbial:id/speedTest"));
             speedtest.click();
             Thread.sleep(5000);
 
             driver.navigate().back();
 
-            //Opens the browser
+            // Opens the browser
             MobileElement browser = (MobileElement) driver.findElement(MobileBy.AccessibilityId("Browser"));
             browser.click();
 
@@ -80,7 +84,8 @@ public class vanilla_android {
             ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
             a.printStackTrace();
         }
-// The driver.quit statement is required, otherwise the test continues to execute, leading to a timeout.
+        // The driver.quit statement is required, otherwise the test continues to
+        // execute, leading to a timeout.
         driver.quit();
     }
-    }
+}
