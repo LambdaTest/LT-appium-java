@@ -31,7 +31,7 @@ public class vanilla_ios {
             caps.setCapability("build", "Java Vanilla - iOS");
             caps.setCapability("name", "Sample Test Java");
             caps.setCapability("devicelog", true);
-            caps.setCapability("network", true);
+            caps.setCapability("network", false);
 
 
         driver = new IOSDriver(new URL("https://" + userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"), caps);
