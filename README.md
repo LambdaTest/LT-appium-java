@@ -23,7 +23,7 @@
 
 _Appium is a tool for automating native, mobile web, and hybrid applications on iOS, Android, and Windows platforms. It supports iOS native apps written in Objective-C or Swift and Android native apps written in Java or Kotlin. It also supports mobile web apps accessed using a mobile browser (Appium supports Safari on iOS and Chrome or the built-in 'Browser' app on Android). Perform Appium automation tests on [LambdaTest's online cloud](https://www.lambdatest.com/appium-mobile-testing)._
 
-*Learn the basics of [Appium testing on the LambdaTest platform](https://www.lambdatest.com/support/docs/getting-started-with-appium-testing/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-java).*
+_Learn the basics of [Appium testing on the LambdaTest platform](https://www.lambdatest.com/support/docs/getting-started-with-appium-testing/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-java)._
 
 [<img height="53" width="200" src="https://user-images.githubusercontent.com/70570645/171866795-52c11b49-0728-4229-b073-4b704209ddde.png">](https://accounts.lambdatest.com/register?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-java)
 
@@ -44,7 +44,7 @@ Before you can start performing App automation testing with Appium, you would ne
 
 Clone the LambdaTest’s :link: [LT-appium-java](https://github.com/LambdaTest/LT-appium-java) repository and navigate to the code directory as shown below:
 
-```js
+```bash
 git clone https://github.com/LambdaTest/LT-appium-java
 cd LT-appium-java
 ```
@@ -57,14 +57,14 @@ Set LambdaTest `Username` and `Access Key` in environment variables.
 
 **For Linux/macOS:**
 
-```js
+```bash
 export LT_USERNAME="YOUR_LAMBDATEST_USERNAME" \
 export LT_ACCESS_KEY="YOUR_LAMBDATEST_ACCESS_KEY"
 ```
 
 **For Windows:**
 
-```js
+```bash
 set LT_USERNAME="YOUR_LAMBDATEST_USERNAME" \
 set LT_ACCESS_KEY="YOUR_LAMBDATEST_ACCESS_KEY"
 ```
@@ -77,7 +77,7 @@ Upload your **_iOS_** application (.ipa file) or **_android_** application (.apk
 
 **Linux/macOS:**
 
-```js
+```bash
 curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 --location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \
 --form 'name="Android_App"' \
@@ -86,7 +86,7 @@ curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 
 **Windows:**
 
-```js
+```bash
 curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"/Users/macuser/Downloads/proverbial_android.apk""
 ```
 
@@ -94,7 +94,7 @@ curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://m
 
 **Linux/macOS:**
 
-```js
+```bash
 curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 --location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \
 --form 'name="Android_App"' \
@@ -103,7 +103,7 @@ curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 
 **Windows:**
 
-```js
+```bash
 curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -d "{"url":"https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk","name":"sample.apk"}"
 ```
 
