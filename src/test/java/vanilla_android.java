@@ -17,21 +17,19 @@ public class vanilla_android {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         Map<String, Object> ltOptions = new HashMap<>();
         ltOptions.put("deviceName", "Galaxy S21+ 5G");
-        ltOptions.put("app", "APP");  // Enter your app url
+        ltOptions.put("app", "lt://proverbial-android");  // Enter your app url
         ltOptions.put("isRealMobile", true);
         ltOptions.put("platformVersion", "12");
         ltOptions.put("platformName", "Android");
-        ltOptions.put("deviceOrientation", "PORTRAIT");
+        // ltOptions.put("deviceOrientation", "PORTRAIT");
         ltOptions.put("build", "Java - Android");
         ltOptions.put("name", "Sample Test Java-Android");
-        ltOptions.put("plugin", "LT-Appium-Java");
         ltOptions.put("w3c", true);
         ltOptions.put("video", true);
         ltOptions.put("visual", true);
         ltOptions.put("network", true);
-        ltOptions.put("tunnel", false);
-        ltOptions.put("project", "");  //Enter Project name here
-        ltOptions.put("smartUI.project", "");  //Enter smartUI Project name here
+        ltOptions.put("project", "Appium-Java-Real-Device");  // Enter your project name   
+        ltOptions.put("smartUI.project", "Real_Device_Project");  // Enter your smartUI Project name  
         capabilities.setCapability("lt:options", ltOptions);
 
 

@@ -26,7 +26,7 @@ public class vanilla_ios {
         ltOptions.put("platformVersion", "16");
         ltOptions.put("platformName", "iOS");
         ltOptions.put("isRealMobile", true);
-        ltOptions.put("deviceOrientation", "PORTRAIT");
+        // ltOptions.put("deviceOrientation", "PORTRAIT");
         ltOptions.put("build", "Java Test - iOS");
         ltOptions.put("name", "Sample Test Java-iOS");
         ltOptions.put("devicelog", true);
@@ -34,9 +34,8 @@ public class vanilla_ios {
         ltOptions.put("video", true);
         ltOptions.put("visual", true);
         ltOptions.put("network", true);
-        ltOptions.put("tunnel", false);
-        ltOptions.put("project", "");  //Enter Project name here
-        ltOptions.put("smartUI.project", "");  //Enter smartUI Project name here
+        ltOptions.put("project", "Appium-Java-Real-Device");   // Enter your project name  
+        ltOptions.put("smartUI.project", "Real_Device_Project");  //Enter your smartUI Project name
         capabilities.setCapability("lt:options", ltOptions);
 
         AppiumDriver driver = new AppiumDriver(
@@ -69,7 +68,6 @@ public class vanilla_ios {
 
             driver.executeScript("smartui.takeScreenshot=<Name of your Screenshot>");
             System.out.println("Screenshot Captured");
-
 
             // ((JavascriptExecutor) driver).executeScript("lambda-status=passed");
             driver.quit();

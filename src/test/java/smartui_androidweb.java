@@ -23,14 +23,12 @@ public class smartui_androidweb {
         ltOptions.put("deviceOrientation", "PORTRAIT");
         ltOptions.put("build", "Java - Android-Web");
         ltOptions.put("name", "Sample Test Java-Android");
-        ltOptions.put("plugin", "LT-Appium-Java");
         ltOptions.put("w3c", true);
         ltOptions.put("video", true);
         ltOptions.put("visual", true);
         ltOptions.put("network", true);
-        ltOptions.put("tunnel", false);
-        ltOptions.put("project", "");  //Enter Project name here
-        ltOptions.put("smartUI.project", "");  //Enter smartUI Project name here
+        ltOptions.put("project", "Appium-Java-Real-Device");  // Enter your project name   
+        ltOptions.put("smartUI.project", "Real_Device_Project");  // Enter your smartUI Project name 
         capabilities.setCapability("lt:options", ltOptions);
 
 
