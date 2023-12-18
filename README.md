@@ -124,19 +124,27 @@ You can update your custom capabilities in test scripts. In this sample project,
 <TabItem value="android-config" label="Android" default>
 
 ```java
-DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("deviceName", "Galaxy S20");
-            capabilities.setCapability("platformVersion", "11");
-            capabilities.setCapability("platformName", "Android");
-            capabilities.setCapability("isRealMobile", true);
-            capabilities.setCapability("app", "YOUR_APP_URL"); //Enter your app url
-            capabilities.setCapability("deviceOrientation", "PORTRAIT");
-            capabilities.setCapability("build", "Java Vanilla - iOS");
-            capabilities.setCapability("name", "Sample Test Java");
-            capabilities.setCapability("console", true);
-            capabilities.setCapability("network", false);
-            capabilities.setCapability("visual", true);
-            capabilities.setCapability("devicelog", true);
+   DesiredCapabilities capabilities = new DesiredCapabilities();
+        Map<String, Object> ltOptions = new HashMap<>();
+        ltOptions.put("deviceName", "Galaxy S21+ 5G");
+        ltOptions.put("app", "APP");  // Enter your app url
+        ltOptions.put("isRealMobile", true);
+        ltOptions.put("platformVersion", "12");
+        ltOptions.put("platformName", "Android");
+        ltOptions.put("deviceOrientation", "PORTRAIT");
+        ltOptions.put("build", "Java - Android");
+        ltOptions.put("name", "Sample Test Java-Android");
+        ltOptions.put("plugin", "LT-Appium-JavaApp");
+        ltOptions.put("w3c", true);
+        ltOptions.put("video", true);
+        ltOptions.put("visual", true);
+        ltOptions.put("network", true);
+        ltOptions.put("tunnel", false);
+        ltOptions.put("project", "");  //Enter Project name here
+        ltOptions.put("smartUI.project", ""); //Enter smartUI Project name here
+        ltOptions.put("smartUI.build": "");   // Enter smartUI buil name here
+        // ltOptions.put("smartUI.baseline":true);  
+        capabilities.setCapability("lt:options", ltOptions);
 ```
 
 </TabItem>
@@ -144,16 +152,27 @@ DesiredCapabilities capabilities = new DesiredCapabilities();
 <TabItem value="ios-config" label="iOS" default>
 
 ```java
-DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("platformVersion", "15");
-            caps.setCapability("deviceName", "iPhone 12");
-            caps.setCapability("isRealMobile", true);
-            caps.setCapability("app", "YOUR_APP_URL"); //Enter your app url
-            caps.setCapability("platformName", "iOS");
-            caps.setCapability("build", "Java Vanilla - iOS");
-            caps.setCapability("name", "Sample Test Java");
-            caps.setCapability("devicelog", true);
-            caps.setCapability("network", true);
+  DesiredCapabilities capabilities = new DesiredCapabilities();
+        Map<String, Object> ltOptions = new HashMap<>();
+        ltOptions.put("app", "APP"); // Enter your app url
+        ltOptions.put("deviceName", "iPhone 14");
+        ltOptions.put("platformVersion", "16");
+        ltOptions.put("platformName", "iOS");
+        ltOptions.put("isRealMobile", true);
+        ltOptions.put("deviceOrientation", "PORTRAIT");
+        ltOptions.put("build", "Java Test - iOS");
+        ltOptions.put("name", "Sample Test Java-iOS");
+        ltOptions.put("devicelog", true);
+        ltOptions.put("w3c", true);
+        ltOptions.put("video", true);
+        ltOptions.put("visual", true);
+        ltOptions.put("network", true);
+        ltOptions.put("tunnel", false);
+        ltOptions.put("project", "");  //Enter Project name here
+        ltOptions.put("smartUI.project", ""); // Enter smartUI Project name here
+        ltOptions.put("smartUI.build": "");   // Enter smartUI buil name here
+        // ltOptions.put("smartUI.baseline":true);  
+        capabilities.setCapability("lt:options", ltOptions);
 ```
 
 </TabItem>
@@ -180,11 +199,21 @@ The tests can be executed in the terminal using the following command:
 ```bash
 mvn test -P android
 ```
+**AndroidWeb:**
+
+```bash
+mvn test -P androidweb
+```
 
 **iOS:**
 
 ```bash
 mvn test -P ios
+```
+**iOSWeb:**
+
+```bash
+mvn test -P iosweb
 ```
 
 **Info:** Your test results would be displayed on the test console (or command-line interface if you are using terminal/cmd) and on the :link: [LambdaTest App Automation Dashboard](https://appautomation.lambdatest.com/build?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-java).

@@ -1,91 +1,76 @@
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class vanilla_android {
-    public static String userName = System.getenv("LT_USERNAME") == null ? "YOUR_USERNAME" // Add username here
+    public static String userName = System.getenv("LT_USERNAME") == null ? "Your LT Username" // Add username here
             : System.getenv("LT_USERNAME");
-    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "YOUR_ACCESS_KEY" // Add accessKey here
+    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "Your LT AccessKey" // Add accessKey here
             : System.getenv("LT_ACCESS_KEY");
+    public static void main(String[] args) throws MalformedURLException, InterruptedException {
+       
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        Map<String, Object> ltOptions = new HashMap<>();
+        ltOptions.put("deviceName", "Galaxy S21+ 5G");
+        ltOptions.put("app", "APP");  // Enter your app url
+        ltOptions.put("isRealMobile", true);
+        ltOptions.put("platformVersion", "12");
+        ltOptions.put("platformName", "Android");
+        ltOptions.put("deviceOrientation", "PORTRAIT");
+        ltOptions.put("build", "Java - Android");
+        ltOptions.put("name", "Sample Test Java-Android");
+        ltOptions.put("plugin", "LT-Appium-Java");
+        ltOptions.put("w3c", true);
+        ltOptions.put("video", true);
+        ltOptions.put("visual", true);
+        ltOptions.put("network", true);
+        ltOptions.put("tunnel", false);
+        ltOptions.put("project", "");  //Enter Project name here
+        ltOptions.put("smartUI.project", "");  //Enter smartUI Project name here
+        capabilities.setCapability("lt:options", ltOptions);
 
-    private static AppiumDriver driver;
 
-    public static void main(String args[]) throws MalformedURLException, InterruptedException {
-
+        AppiumDriver driver = new AppiumDriver(
+                new URL("https://"+userName+":"+accessKey+"@mobile-hub.lambdatest.com/wd/hub"),
+                capabilities);
         try {
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("deviceName", "Galaxy S20");
-            capabilities.setCapability("platformVersion", "11");
-            capabilities.setCapability("platformName", "Android");
-            capabilities.setCapability("isRealMobile", true);
-            capabilities.setCapability("app", "APP_URL"); // Enter your app url
-            capabilities.setCapability("deviceOrientation", "PORTRAIT");
-            capabilities.setCapability("build", "Java Vanilla - Android");
-            capabilities.setCapability("name", "Sample Test Java");
-            capabilities.setCapability("console", true);
-            capabilities.setCapability("network", false);
-            capabilities.setCapability("visual", true);
-            capabilities.setCapability("devicelog", true);
 
-            driver = new AppiumDriver(
-                    new URL("https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"),
-                    capabilities);
+            driver.findElement(AppiumBy.id("com.lambdatest.proverbial:id/color")).click();
 
-            MobileElement color = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/color"));
-            color.click();
+            //Changes the text to proverbial
+            driver.findElement(AppiumBy.id("com.lambdatest.proverbial:id/Text")).click();
 
-            MobileElement text = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/Text"));
-            // Changes the text to proverbial
-            text.click();
+            //toast is visible
+            driver.findElement(AppiumBy.id("com.lambdatest.proverbial:id/toast")).click();
 
-            // toast is visible
-            MobileElement toast = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/toast"));
-            toast.click();
+            //notification is visible
+            driver.findElement(AppiumBy.id("com.lambdatest.proverbial:id/notification")).click();
 
-            // notification is visible
-            MobileElement notification = (MobileElement) driver
-                    .findElement(MobileBy.id("com.lambdatest.proverbial:id/notification"));
-            notification.click();
-
-            // Open the geolocation page
-            MobileElement geo = (MobileElement) driver
-                    .findElement(MobileBy.id("com.lambdatest.proverbial:id/geoLocation"));
-            geo.click();
-            Thread.sleep(5000);
-
-            // takes back to home page
-            MobileElement el3 = (MobileElement) driver.findElementByAccessibilityId("Home");
-
+            //takes back to home page
+            driver.findElement(AppiumBy.accessibilityId("Home")).click();
             driver.navigate().back();
             Thread.sleep(2000);
 
-            // Takes to speed test page
-            MobileElement speedtest = (MobileElement) driver
-                    .findElement(MobileBy.id("com.lambdatest.proverbial:id/speedTest"));
-            speedtest.click();
+            //Takes to speed test page
+            driver.findElement(AppiumBy.id("com.lambdatest.proverbial:id/speedTest")).click();
             Thread.sleep(5000);
-
             driver.navigate().back();
 
-            // Opens the browser
-            MobileElement browser = (MobileElement) driver.findElement(MobileBy.AccessibilityId("Browser"));
-            browser.click();
+            driver.executeScript("smartui.takeScreenshot=<Name of your Screenshot>");
+            System.out.println("Screenshot Captured");
 
-            MobileElement url = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/url"));
-            url.sendKeys("https://www.lambdatest.com");
-            MobileElement find = (MobileElement) driver.findElement(MobileBy.id("com.lambdatest.proverbial:id/find"));
-            find.click();
 
+            driver.quit();
         } catch (AssertionError a) {
-            ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
+         //  ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
             a.printStackTrace();
         }
-        // The driver.quit statement is required, otherwise the test continues to
-        // execute, leading to a timeout.
-        driver.quit();
     }
 }
+
+
