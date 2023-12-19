@@ -140,7 +140,7 @@ You can update your custom capabilities in test scripts. In this sample project,
         ltOptions.put("network", true);
         ltOptions.put("project", "Appium-Java-Real-Device");  // Enter your project name   
         ltOptions.put("smartUI.project", "Real_Device_Project"); // Enter your smartUI Project name 
-        ltOptions.put("smartUI.build": "");   // Enter smartUI build name 
+        ltOptions.put("smartUI.build": "");   // Enter your smartUI build name 
         capabilities.setCapability("lt:options", ltOptions);
 ```
 
@@ -166,7 +166,7 @@ You can update your custom capabilities in test scripts. In this sample project,
         ltOptions.put("network", true);
         ltOptions.put("project", "Appium-Java-Real-Device");  // Enter your project name
         ltOptions.put("smartUI.project", "Real_Device_Test"); // Enter your smartUI Project name  
-        ltOptions.put("smartUI.build": "");   // Enter your smartUI Project name  
+        ltOptions.put("smartUI.build": "");   // Enter your smartUI build name  
         capabilities.setCapability("lt:options", ltOptions);
 ```
 
@@ -231,7 +231,7 @@ Visit the following links to learn more about LambdaTest's features, setup and t
 
 The [LambdaTest Community](https://community.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-java) allows people to interact with tech enthusiasts. Connect, ask questions, and learn from tech-savvy people. Discuss best practises in web development, testing, and DevOps with professionals from across the globe 🌎
 
-## What's New At LambdaTest ❓
+## What's New At LambdaTest
 
 To stay updated with the latest features and product add-ons, visit [Changelog](https://changelog.lambdatest.com/)
 
