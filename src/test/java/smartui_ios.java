@@ -9,11 +9,11 @@ import java.time.Duration;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-public class vanilla_ios {
+public class smartui_ios {
 
-    public static String userName = System.getenv("LT_USERNAME") == null ? "Your LT Username" // Add username here
+    public static String userName = System.getenv("LT_USERNAME") == null ? "YOUR_USERNAME" // Add username here
             : System.getenv("LT_USERNAME");
-    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "Your LT AccessKey" // Add accessKey here
+    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "YOUR_USERNAME" // Add accessKey here
             : System.getenv("LT_ACCESS_KEY");
 
 
@@ -21,21 +21,16 @@ public class vanilla_ios {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         Map<String, Object> ltOptions = new HashMap<>();
-        ltOptions.put("app", "APP"); // Enter your app url
+        ltOptions.put("app", "lt://proverbial-ios"); // Enter your app url
         ltOptions.put("deviceName", "iPhone 14");
-        ltOptions.put("platformVersion", "16");
-        ltOptions.put("platformName", "iOS");
+         ltOptions.put("platformName", "iOS");
         ltOptions.put("isRealMobile", true);
-        // ltOptions.put("deviceOrientation", "PORTRAIT");
         ltOptions.put("build", "Java Test - iOS");
         ltOptions.put("name", "Sample Test Java-iOS");
-        ltOptions.put("devicelog", true);
         ltOptions.put("w3c", true);
         ltOptions.put("video", true);
         ltOptions.put("visual", true);
-        ltOptions.put("network", true);
-        ltOptions.put("project", "Appium-Java-Real-Device");   // Enter your project name  
-        ltOptions.put("smartUI.project", "Real_Device_Project");  //Enter your smartUI Project name
+        ltOptions.put("smartUI.project", "Real-Device-Project-IOS");  //Enter your smartUI Project name
         capabilities.setCapability("lt:options", ltOptions);
 
         AppiumDriver driver = new AppiumDriver(

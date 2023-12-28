@@ -124,24 +124,10 @@ You can update your custom capabilities in test scripts. In this sample project,
 <TabItem value="android-config" label="Android" default>
 
 ```java
-   DesiredCapabilities capabilities = new DesiredCapabilities();
-        Map<String, Object> ltOptions = new HashMap<>();
-        ltOptions.put("deviceName", "Galaxy S21+ 5G");
-        ltOptions.put("app", "lt://proverbial-android");  // Enter your app url
-        ltOptions.put("isRealMobile", true);
-        ltOptions.put("platformVersion", "12");
-        ltOptions.put("platformName", "Android");
-        ltOptions.put("deviceOrientation", "PORTRAIT");
-        ltOptions.put("build", "Java - Android");
-        ltOptions.put("name", "Sample Test Java-Android");
-        ltOptions.put("w3c", true);
-        ltOptions.put("video", true);
-        ltOptions.put("visual", true);
-        ltOptions.put("network", true);
-        ltOptions.put("project", "Appium-Java-Real-Device");  // Enter your project name   
+   ...
         ltOptions.put("smartUI.project", "Real_Device_Project"); // Enter your smartUI Project name 
         ltOptions.put("smartUI.build": "");   // Enter your smartUI build name 
-        capabilities.setCapability("lt:options", ltOptions);
+   ...
 ```
 
 </TabItem>
@@ -149,25 +135,10 @@ You can update your custom capabilities in test scripts. In this sample project,
 <TabItem value="ios-config" label="iOS" default>
 
 ```java
-  DesiredCapabilities capabilities = new DesiredCapabilities();
-        Map<String, Object> ltOptions = new HashMap<>();
-        ltOptions.put("app", "lt://proverbial-ios"); // Enter your app url
-        ltOptions.put("deviceName", "iPhone 14");
-        ltOptions.put("platformVersion", "16");
-        ltOptions.put("platformName", "iOS");
-        ltOptions.put("isRealMobile", true);
-        ltOptions.put("deviceOrientation", "PORTRAIT");
-        ltOptions.put("build", "Java Test - iOS");
-        ltOptions.put("name", "Sample Test Java-iOS");
-        ltOptions.put("devicelog", true);
-        ltOptions.put("w3c", true);
-        ltOptions.put("video", true);
-        ltOptions.put("visual", true);
-        ltOptions.put("network", true);
-        ltOptions.put("project", "Appium-Java-Real-Device");  // Enter your project name
-        ltOptions.put("smartUI.project", "Real_Device_Test"); // Enter your smartUI Project name  
-        ltOptions.put("smartUI.build": "");   // Enter your smartUI build name  
-        capabilities.setCapability("lt:options", ltOptions);
+    ...
+        ltOptions.put("smartUI.project", "Real_Device_Project"); // Enter your smartUI Project name 
+        ltOptions.put("smartUI.build": "");   // Enter your smartUI build name 
+   ...
 ```
 
 </TabItem>

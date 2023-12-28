@@ -8,9 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class smartui_androidweb {
-    public static String userName = System.getenv("LT_USERNAME") == null ? "Your LT Username" // Add username here
+    public static String userName = System.getenv("LT_USERNAME") == null ? "YOUR_USERNAME" // Add username here
             : System.getenv("LT_USERNAME");
-    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "Your LT AccessKey" // Add accessKey here
+    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "YOUR_ACCESS_KEY" // Add accessKey here
             : System.getenv("LT_ACCESS_KEY");
     public static void main(String[] args) throws MalformedURLException, InterruptedException {
 
@@ -18,17 +18,13 @@ public class smartui_androidweb {
         Map<String, Object> ltOptions = new HashMap<>();
         ltOptions.put("deviceName", "Galaxy S21+ 5G");
         ltOptions.put("isRealMobile", true);
-        ltOptions.put("platformVersion", "12");
         ltOptions.put("platformName", "Android");
-        ltOptions.put("deviceOrientation", "PORTRAIT");
         ltOptions.put("build", "Java - Android-Web");
         ltOptions.put("name", "Sample Test Java-Android");
         ltOptions.put("w3c", true);
         ltOptions.put("video", true);
         ltOptions.put("visual", true);
-        ltOptions.put("network", true);
-        ltOptions.put("project", "Appium-Java-Real-Device");  // Enter your project name   
-        ltOptions.put("smartUI.project", "Real_Device_Project");  // Enter your smartUI Project name 
+        ltOptions.put("smartUI.project", "Real-Device-Project-Android-Web");  // Enter your smartUI Project name
         capabilities.setCapability("lt:options", ltOptions);
 
 

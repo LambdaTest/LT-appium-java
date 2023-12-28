@@ -131,7 +131,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>vanilla_android</mainClass>
+                                    <mainClass>smartui_android</mainClass>
                                     <classpathScope>test</classpathScope>
                                 </configuration>
                             </execution>
@@ -179,7 +179,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>vanilla_ios</mainClass>
+                                    <mainClass>smartui_ios</mainClass>
                                     <classpathScope>test</classpathScope>
                                 </configuration>
                             </execution>
