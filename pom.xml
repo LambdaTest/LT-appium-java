@@ -131,7 +131,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>smartui_android</mainClass>
+                                    <mainClass>SmartuiAndroid</mainClass>
                                     <classpathScope>test</classpathScope>
                                 </configuration>
                             </execution>
@@ -155,7 +155,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>smartui_androidweb</mainClass>
+                                    <mainClass>SmartuiAndroidWeb</mainClass>
                                     <classpathScope>test</classpathScope>
                                 </configuration>
                             </execution>
@@ -179,7 +179,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>smartui_ios</mainClass>
+                                    <mainClass>SmartuiIOS</mainClass>
                                     <classpathScope>test</classpathScope>
                                 </configuration>
                             </execution>
@@ -204,7 +204,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>smartui_iosweb</mainClass>
+                                    <mainClass>SmartuiIOSWeb</mainClass>
                                     <classpathScope>test</classpathScope>
                                 </configuration>
                             </execution>

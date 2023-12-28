@@ -9,11 +9,11 @@ import java.time.Duration;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-public class smartui_ios {
+public class SmartuiIOS {
 
-    public static String userName = System.getenv("LT_USERNAME") == null ? "YOUR_USERNAME" // Add username here
+    public static String userName = System.getenv("LT_USERNAME") == null ? "YOUR_LT_USERNAME" // Add username here
             : System.getenv("LT_USERNAME");
-    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "YOUR_USERNAME" // Add accessKey here
+    public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "YOUR_LT_ACCESS_KEY" // Add accessKey here
             : System.getenv("LT_ACCESS_KEY");
 
 
