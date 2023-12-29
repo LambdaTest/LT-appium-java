@@ -124,19 +124,10 @@ You can update your custom capabilities in test scripts. In this sample project,
 <TabItem value="android-config" label="Android" default>
 
 ```java
-DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("deviceName", "Galaxy S20");
-            capabilities.setCapability("platformVersion", "11");
-            capabilities.setCapability("platformName", "Android");
-            capabilities.setCapability("isRealMobile", true);
-            capabilities.setCapability("app", "YOUR_APP_URL"); //Enter your app url
-            capabilities.setCapability("deviceOrientation", "PORTRAIT");
-            capabilities.setCapability("build", "Java Vanilla - iOS");
-            capabilities.setCapability("name", "Sample Test Java");
-            capabilities.setCapability("console", true);
-            capabilities.setCapability("network", false);
-            capabilities.setCapability("visual", true);
-            capabilities.setCapability("devicelog", true);
+   ...
+        ltOptions.put("smartUI.project", "Real_Device_Project"); // Enter your smartUI Project name 
+        ltOptions.put("smartUI.build": "");   // Enter your smartUI build name 
+   ...
 ```
 
 </TabItem>
@@ -144,16 +135,10 @@ DesiredCapabilities capabilities = new DesiredCapabilities();
 <TabItem value="ios-config" label="iOS" default>
 
 ```java
-DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("platformVersion", "15");
-            caps.setCapability("deviceName", "iPhone 12");
-            caps.setCapability("isRealMobile", true);
-            caps.setCapability("app", "YOUR_APP_URL"); //Enter your app url
-            caps.setCapability("platformName", "iOS");
-            caps.setCapability("build", "Java Vanilla - iOS");
-            caps.setCapability("name", "Sample Test Java");
-            caps.setCapability("devicelog", true);
-            caps.setCapability("network", true);
+    ...
+        ltOptions.put("smartUI.project", "Real_Device_Project"); // Enter your smartUI Project name 
+        ltOptions.put("smartUI.build": "");   // Enter your smartUI build name 
+   ...
 ```
 
 </TabItem>
@@ -180,11 +165,21 @@ The tests can be executed in the terminal using the following command:
 ```bash
 mvn test -P android
 ```
+**AndroidWeb:**
+
+```bash
+mvn test -P androidweb
+```
 
 **iOS:**
 
 ```bash
 mvn test -P ios
+```
+**iOSWeb:**
+
+```bash
+mvn test -P iosweb
 ```
 
 **Info:** Your test results would be displayed on the test console (or command-line interface if you are using terminal/cmd) and on the :link: [LambdaTest App Automation Dashboard](https://appautomation.lambdatest.com/build?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-java).
@@ -207,7 +202,7 @@ Visit the following links to learn more about LambdaTest's features, setup and t
 
 The [LambdaTest Community](https://community.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-java) allows people to interact with tech enthusiasts. Connect, ask questions, and learn from tech-savvy people. Discuss best practises in web development, testing, and DevOps with professionals from across the globe 🌎
 
-## What's New At LambdaTest ❓
+## What's New At LambdaTest
 
 To stay updated with the latest features and product add-ons, visit [Changelog](https://changelog.lambdatest.com/)
 

@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>4.5.0</version>
         </dependency>
 
 
@@ -42,12 +42,12 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-support</artifactId>
-            <version>2.52.0</version>
+            <version>4.16.1</version>
         </dependency>
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>7.6.0</version>
+            <version>8.3.0</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
@@ -86,7 +86,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-remote-driver</artifactId>
-            <version>3.141.59</version>
+            <version>4.13.0</version>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -123,7 +123,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>3.0.0</version>
                         <executions>
                             <execution>
                                 <phase>test</phase>
@@ -131,7 +131,55 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>vanilla_android</mainClass>
+                                    <mainClass>SmartuiAndroid</mainClass>
+                                    <classpathScope>test</classpathScope>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>androidweb</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.0.0</version>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>java</goal>
+                                </goals>
+                                <configuration>
+                                    <mainClass>SmartuiAndroidWeb</mainClass>
+                                    <classpathScope>test</classpathScope>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>ios</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.0.0</version>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>java</goal>
+                                </goals>
+                                <configuration>
+                                    <mainClass>SmartuiIOS</mainClass>
                                     <classpathScope>test</classpathScope>
                                 </configuration>
                             </execution>
@@ -142,13 +190,13 @@
         </profile>
 
         <profile>
-            <id>ios</id>
+            <id>iosweb</id>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.1.1</version>
+                        <version>3.0.0</version>
                         <executions>
                             <execution>
                                 <phase>test</phase>
@@ -156,7 +204,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>vanilla_ios</mainClass>
+                                    <mainClass>SmartuiIOSWeb</mainClass>
                                     <classpathScope>test</classpathScope>
                                 </configuration>
                             </execution>
