@@ -28,12 +28,9 @@ public class SmartuiAndroid {
         ltOptions.put("smartUI.project", "Real-Device-Project-Android");  // Enter your smartUI Project name
         capabilities.setCapability("lt:options", ltOptions);
 
-
         AppiumDriver driver = new AppiumDriver(
-                new URL("https://"+userName+":"+accessKey+"@mobile-hub.lambdatest.com/wd/hub"),
-                capabilities);
+                new URL("https://"+userName+":"+accessKey+"@mobile-hub.lambdatest.com/wd/hub"), capabilities);
         try {
-
             driver.findElement(AppiumBy.id("com.lambdatest.proverbial:id/color")).click();
 
             //Changes the text to proverbial
@@ -57,9 +54,8 @@ public class SmartuiAndroid {
 
             driver.executeScript("smartui.takeScreenshot=<Name of your Screenshot>");
             System.out.println("Screenshot Captured");
-
-
             driver.quit();
+            
         } catch (AssertionError a) {
          //  ((JavascriptExecutor) driver).executeScript("lambda-status=failed");
             a.printStackTrace();

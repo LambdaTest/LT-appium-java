@@ -1,4 +1,4 @@
-smartui_iosweb.class
-smartui_ios.class
-smartui_android.class
-smartui_androidweb.class
+SmartuiIOSWeb.class
+SmartuiAndroid.class
+SmartuiAndroidWeb.class
+SmartuiIOS.class

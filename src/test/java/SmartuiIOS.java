@@ -9,6 +9,7 @@ import java.time.Duration;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+
 public class SmartuiIOS {
 
     public static String userName = System.getenv("LT_USERNAME") == null ? "YOUR_LT_USERNAME" // Add username here
@@ -16,14 +17,13 @@ public class SmartuiIOS {
     public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "YOUR_LT_ACCESS_KEY" // Add accessKey here
             : System.getenv("LT_ACCESS_KEY");
 
-
     public static void main(String[] args) throws Exception {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         Map<String, Object> ltOptions = new HashMap<>();
         ltOptions.put("app", "lt://proverbial-ios"); // Enter your app url
         ltOptions.put("deviceName", "iPhone 14");
-         ltOptions.put("platformName", "iOS");
+        ltOptions.put("platformName", "iOS");
         ltOptions.put("isRealMobile", true);
         ltOptions.put("build", "Java Test - iOS");
         ltOptions.put("name", "Sample Test Java-iOS");
@@ -34,11 +34,9 @@ public class SmartuiIOS {
         capabilities.setCapability("lt:options", ltOptions);
 
         AppiumDriver driver = new AppiumDriver(
-                new URL("https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"),
-                capabilities);
+                new URL("https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"),capabilities);
 
         try {
-
             Thread.sleep(2000);
             // Changes color
             driver.findElement(AppiumBy.id("color")).click();
@@ -46,7 +44,6 @@ public class SmartuiIOS {
 
             //Back to black color
             driver.navigate().back();
-
             Thread.sleep(1000);
 
             //Changes the text to proverbial
@@ -63,10 +60,8 @@ public class SmartuiIOS {
 
             driver.executeScript("smartui.takeScreenshot=<Name of your Screenshot>");
             System.out.println("Screenshot Captured");
-
             // ((JavascriptExecutor) driver).executeScript("lambda-status=passed");
             driver.quit();
-
         } catch (Exception t) {
             System.out.println(t);
             driver.quit();

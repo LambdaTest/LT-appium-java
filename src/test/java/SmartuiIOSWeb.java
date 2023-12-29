@@ -3,13 +3,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+
 public class SmartuiIOSWeb {
 
     public static String userName = System.getenv("LT_USERNAME") == null ? "YOUR_LT_USERNAME" // Add username here
             : System.getenv("LT_USERNAME");
     public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "YOUR_LT_ACCESS_KEY" // Add accessKey here
             : System.getenv("LT_ACCESS_KEY");
-
 
     public static void main(String[] args) throws Exception {
 
@@ -27,19 +27,15 @@ public class SmartuiIOSWeb {
         capabilities.setCapability("lt:options", ltOptions);
 
         AppiumDriver driver = new AppiumDriver(
-                new URL("https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"),
-                capabilities);
+                new URL("https://" + userName + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub"),capabilities);
 
         try {
-
             driver.get("https://www.lambdatest.com/");
             Thread.sleep(10000);
             driver.executeScript("smartui.takeScreenshot=<Name of your Screenshot>");
             System.out.println("Screenshot Captured");
-
-            // ((JavascriptExecutor) driver).executeScript("lambda-status=passed");
+//             ((JavascriptExecutor) driver).executeScript("lambda-status=passed");
             driver.quit();
-
         } catch (Exception t) {
             System.out.println(t);
             driver.quit();
