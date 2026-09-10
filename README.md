@@ -13,7 +13,7 @@
 With TestMu AI (Formerly LambdaTest), you can run Appium tests in Java across real Android and iOS devices. This sample shows how to configure Java Appium tests with Maven to run on the TestMu AI Real Device Cloud.
 
 - [Sign up on TestMu AI](https://www.testmuai.com/register/) (Formerly LambdaTest).
-- Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/appium-java/) for the full setup walkthrough.
+- Follow the [Run Appium tests with Java on TestMu AI](https://www.testmuai.com/support/docs/appium-java/) for the full setup walkthrough.
 
 ### Prerequisites
 
